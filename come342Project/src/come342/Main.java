@@ -10,6 +10,8 @@ import Entity.Client;
 import Entity.StaffMember;
 import Control.AssignStaffToCampaign;
 import Entity.CreativeStaff;
+import Entity.Advert;
+import Entity.Campaign;
 
 
 
@@ -26,8 +28,10 @@ public class Main {
 		Printer.println("2- Add a new campaign");
 		Printer.println("3- Add a new staff");
 		Printer.println("4- Assign staff to campaign");
-		Printer.println("5- Show Client List");
-		Printer.println("6- Show Campaign List");
+		Printer.println("5- Add a new Advert");
+		Printer.println("6- Show Client List");
+		Printer.println("7- Show Campaign List");
+		
 		Printer.printSymbol("-", 20);
 		Printer.print("\nYour choice: ");
 		int choice = new Scanner(System.in).nextInt();
@@ -53,12 +57,19 @@ public class Main {
 			Printer.println("\nAssign staff to campaign");
 			AssignStaffToCampaign.assign();
 			break;
+			
 		case 5:
+			Printer.printSymbol("*", 30);
+			Printer.println("\nAdd a new Advert");
+			Campaign.addNewAdvert();
+			break;
+			
+		case 6:
 			Printer.printSymbol("*", 30);
 			Printer.showClientList();
 			mainMenu();
 			break;
-		case 6:
+		case 7:
 			Printer.printSymbol("*", 30);
 			Printer.showCampaignList();
 			mainMenu();

@@ -35,4 +35,5 @@ public class AddNewCampaign {
         client.addNewClientCampaign(campaign);
        
     }
+   
 }

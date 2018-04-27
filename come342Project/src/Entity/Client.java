@@ -55,6 +55,7 @@ public class Client {
 		System.out.printf("The client named '%s' has added the system.\n", companyName);
 		System.out.println("Please enter the compaign informations:");
 		addNewCampaign(createdClient);
+		
 
 	}
 
@@ -81,6 +82,7 @@ public class Client {
         AddNewCampaign.getInstance().showClientCampaigns(selectedClient);
         
         addNewCampaign(selectedClient);
+        
     }
 
 	//Yeni oluþturulan clienta kampanya eklemek için çalýþan fonksiyon.
@@ -93,9 +95,8 @@ public class Client {
 		String campaignFinishDate = new Scanner(System.in).nextLine();
 		System.out.println("New Estimated Cost: ");
 		Double estimatedCost = new Scanner(System.in).nextDouble();
-        AddNewCampaign.getInstance().createNewCampaign(client, 
-                new Campaign(campaignTitle, campaignStartDate, campaignFinishDate, estimatedCost));
-		
+        
+		 
 		Main.mainMenu();
 
 	}
@@ -121,6 +122,7 @@ public class Client {
 		Database.campaignList.add(campaign);
 	}	
 	
+
 	
 	
 	public String getCompanyEmail() {

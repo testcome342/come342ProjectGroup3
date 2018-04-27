@@ -5,7 +5,11 @@ package Entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import Control.AddNewAdvert;
+import Control.AddNewCampaign;
 import Printer.Printer;
+import come342.Database;
 
 public class Campaign {
 	private String campaignTitle;
@@ -13,6 +17,7 @@ public class Campaign {
 	private String campaignFinishDate;
 	private double estimatedCost;
 	private List<CreativeStaff> campaignStaffList = new ArrayList<CreativeStaff>();
+	private List<Advert> campaignAdvertList = new ArrayList<Advert>();
     
 	public Campaign() {
 		
@@ -37,6 +42,42 @@ public class Campaign {
 	        }
 	      
 	    }
+	 
+	//Var olan clientlara kampanya eklemek için çalýþan fonksiyon.
+		public static void addNewAdvert() {
+	        Printer.println("\nSelect a campaign:");
+	        /*
+	            Show client list
+	        */
+	        for (int i=1; i<=Database.campaignList.size(); i++){
+	            Printer.println(i + ".)" + Database.campaignList.get(i-1).getCampaignTitle());
+	        }
+	        
+	        Printer.print("Your choice: ");
+	        int choice = new Scanner(System.in).nextInt();
+	        Campaign selectedCampaign = Database.campaignList.get(choice-1);
+	        
+	        /*
+	            Campaign list
+	        */
+	        System.out.printf("\nSelect a advert for campaign named '%s'", Database.campaignList.get(choice-1).getCampaignTitle());
+	        Printer.print("\n");
+	        Printer.printSymbol("-", 20);
+	        AddNewAdvert.getInstance().showCampaignAdvert(selectedCampaign);
+	        
+	        Advert.createAdvert(selectedCampaign);
+	        
+	    }
+	 
+	 public void addNewCampaignAdvert(Advert advert) {
+			this.campaignAdvertList.add(advert);
+			Database.advertList.add(advert);
+		}
+	 
+	 public List<Advert> getAdvertList() {
+			return campaignAdvertList;
+		}
+
 	 
 	public String getCampaignTitle() {
 		return campaignTitle;

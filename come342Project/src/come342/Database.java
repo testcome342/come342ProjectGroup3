@@ -7,6 +7,7 @@ import java.util.List;
 import Entity.Campaign;
 import Entity.Client;
 import Entity.CreativeStaff;
+import Entity.Advert;
 
 
 public class Database {
@@ -14,6 +15,9 @@ public class Database {
     public static List<Client> clientList = new ArrayList<Client>();
     public static List<Campaign> campaignList = new ArrayList<Campaign>();
     public static List<CreativeStaff> creativeStaffList = new ArrayList<CreativeStaff>();
+    public static List<Advert> advertList = new ArrayList<Advert>();
+    
+ 
     //public static List<AdminStaff> adminStaffList = new ArrayList<AdminStaff>();
 
     public static void init() {
@@ -34,6 +38,10 @@ public class Database {
         creativeStaffList.add(new CreativeStaff("Hayrettin Çelik", 1, "20/05/2015"));
         creativeStaffList.add(new CreativeStaff("Tunahan Iþýk", 2, "23/06/2015"));
         creativeStaffList.add(new CreativeStaff("Ali Dinçer", 3, "27/06/2015"));     
+        
+        
+        Advert advert1 = new Advert("ABC","30/20/10",30.00,40.00);
+        tekno5.addNewCampaignAdvert(advert1);
     }
 }
 
