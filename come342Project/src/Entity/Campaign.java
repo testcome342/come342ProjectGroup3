@@ -31,6 +31,10 @@ public class Campaign {
 	                    this.getCampaignStartDate(),
 	                    this.getCampaignFinishDate(),
 	                    Printer.makeCost(this.getEstimatedCost()));   
+	        
+	        for (int i=0; i<this.campaignStaffList.size(); i++){
+	            System.out.print(this.campaignStaffList.get(i).getStaffName() + "   ");
+	        }
 	      
 	    }
 	 
