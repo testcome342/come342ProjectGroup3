@@ -7,7 +7,9 @@ import java.util.Scanner;
 import Printer.Printer;
 import java.util.Scanner;
 import Entity.Client;
+import Entity.StaffMember;
 import Control.AssignStaffToCampaign;
+import Entity.CreativeStaff;
 
 
 
@@ -22,9 +24,10 @@ public class Main {
 		Printer.println("Select one of the following:");
 		Printer.println("1- Add a new client");
 		Printer.println("2- Add a new campaign");
-		Printer.println("3- Assign staff to campaign");
-		Printer.println("4- Show Client List");
-		Printer.println("5- Show Campaign List");
+		Printer.println("3- Add a new staff");
+		Printer.println("4- Assign staff to campaign");
+		Printer.println("5- Show Client List");
+		Printer.println("6- Show Campaign List");
 		Printer.printSymbol("-", 20);
 		Printer.print("\nYour choice: ");
 		int choice = new Scanner(System.in).nextInt();
@@ -42,19 +45,25 @@ public class Main {
 			break;
 		case 3:
 			Printer.printSymbol("*", 30);
+			Printer.println("\nAdd a new staff");
+			CreativeStaff.addNewStaff();
+			break;
+		case 4:
+			Printer.printSymbol("*", 30);
 			Printer.println("\nAssign staff to campaign");
 			AssignStaffToCampaign.assign();
 			break;
-		case 4:
+		case 5:
 			Printer.printSymbol("*", 30);
 			Printer.showClientList();
 			mainMenu();
 			break;
-		case 5:
+		case 6:
 			Printer.printSymbol("*", 30);
 			Printer.showCampaignList();
 			mainMenu();
 			break;
+	
 		default:
 			Printer.println("Error. Please choose between 1 - 5");
 			mainMenu();

@@ -3,6 +3,11 @@
 
 package Entity;
 
+import java.util.Scanner;
+
+import Control.AddNewStaff;
+import Printer.Printer;
+
 public abstract class StaffMember {
     private String staffName;
     private int staffNo;
@@ -21,6 +26,8 @@ public abstract class StaffMember {
                 " .Staff Start Date is " + this.staffStartDate
                 );
     }
+    
+
 
     public String getStaffName() {
         return staffName;
