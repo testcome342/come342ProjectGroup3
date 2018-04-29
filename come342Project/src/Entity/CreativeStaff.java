@@ -3,7 +3,6 @@
 
 package Entity;
 
-import java.util.Scanner;
 import Control.AddNewStaff;
 import Printer.Printer;
 import come342.Main;
@@ -22,11 +21,11 @@ public class CreativeStaff extends StaffMember {
     
     public static void addNewStaff() {
     	Printer.print("\nStaff Name: ");
-    	String staffName = new Scanner(System.in).nextLine();
+    	String staffName = Printer.scanString();
     	Printer.print("\nStaff No: ");
-    	int staffNo = new Scanner(System.in).nextInt();
+    	int staffNo = Printer.scanInt();
     	Printer.print("\nStart Date: ");
-    	String staffStartDate = new Scanner(System.in).nextLine();
+    	String staffStartDate = Printer.scanString();
     	CreativeStaff createdStaff = new CreativeStaff(staffName,staffNo,staffStartDate);
     	AddNewStaff.getInstance().createNewStaff(createdStaff);
     	System.out.printf("The staff named '%s' has added the system.\n", staffName);

@@ -3,10 +3,6 @@
 
 package Entity;
 
-import java.util.Scanner;
-
-import Control.AddNewStaff;
-import Printer.Printer;
 
 public abstract class StaffMember {
     private String staffName;

@@ -1,6 +1,5 @@
 package Entity;
 
-import java.util.Scanner;
 import Printer.Printer;
 import come342.Main;
 
@@ -22,16 +21,18 @@ public class Advert {
 	
 	
 	public static void createAdvert(Campaign campaign) {
-		Printer.print("\nAdvert Title: ");
-    	String advertTitle = new Scanner(System.in).nextLine();
-    	Printer.print("\nTarget Completion Date: ");
-    	String targetCompletionDate = new Scanner(System.in).nextLine();
-    	Printer.print("\nEstimated Advert Cost: ");
-    	double estimatedCost = new Scanner(System.in).nextDouble();
-    	Printer.print("\nActual Advert Cost: ");
-    	double actualAdvertCost = new Scanner(System.in).nextDouble();
+		Printer.print("Advert Title: ");
+    	String advertTitle = Printer.scanString();
+    	Printer.print("Target Completion Date: ");
+    	String targetCompletionDate = Printer.scanString();
+    	Printer.print("Estimated Advert Cost: ");
+    	double estimatedCost = Printer.scanDouble();
+    	Printer.print("Actual Advert Cost: ");
+    	double actualAdvertCost = Printer.scanDouble();
     	Advert createdAdvert = new Advert(advertTitle,targetCompletionDate,estimatedCost,actualAdvertCost);
-		Main.mainMenu();
+		
+    	
+    	Main.mainMenu();
     	
 	}
 	

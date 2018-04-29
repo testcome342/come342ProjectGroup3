@@ -3,14 +3,10 @@
 
 package come342;
 
-import java.util.Scanner;
 import Printer.Printer;
-import java.util.Scanner;
 import Entity.Client;
-import Entity.StaffMember;
 import Control.AssignStaffToCampaign;
 import Entity.CreativeStaff;
-import Entity.Advert;
 import Entity.Campaign;
 
 
@@ -34,7 +30,7 @@ public class Main {
 		
 		Printer.printSymbol("-", 20);
 		Printer.print("\nYour choice: ");
-		int choice = new Scanner(System.in).nextInt();
+		int choice = Printer.scanInt();
 
 		switch (choice) {
 		case 1:
@@ -56,14 +52,12 @@ public class Main {
 			Printer.printSymbol("*", 30);
 			Printer.println("\nAssign staff to campaign");
 			AssignStaffToCampaign.assign();
-			break;
-			
+			break;			
 		case 5:
 			Printer.printSymbol("*", 30);
 			Printer.println("\nAdd a new Advert");
 			Campaign.addNewAdvert();
-			break;
-			
+			break;			
 		case 6:
 			Printer.printSymbol("*", 30);
 			Printer.showClientList();
@@ -73,10 +67,9 @@ public class Main {
 			Printer.printSymbol("*", 30);
 			Printer.showCampaignList();
 			mainMenu();
-			break;
-	
+			break;	
 		default:
-			Printer.println("Error. Please choose between 1 - 5");
+			Printer.println("Error. Please choose between 1 - 7");
 			mainMenu();
 			break;
 		}

@@ -2,6 +2,7 @@ package Printer;
 
 import java.text.DecimalFormat;
 import java.util.Collections;
+import java.util.Scanner;
 import java.util.stream.Stream;
 
 import come342.Database;
@@ -61,5 +62,18 @@ public class Printer {
         println("\n");
 
     }
+   public static int scanInt() {
+       int value = new Scanner(System.in).nextInt();
+       return value;
+   }
+   public static String scanString() {
+       String value = new Scanner(System.in).nextLine();
+       return value;
+   }
+   public static Double scanDouble() {
+       Double value = new Scanner(System.in).nextDouble();
+       return value;
+   }
+
 
 }

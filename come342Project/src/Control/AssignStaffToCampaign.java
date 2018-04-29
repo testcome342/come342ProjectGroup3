@@ -8,7 +8,6 @@ import come342.Main;
 import Printer.Printer;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import Entity.Campaign;
 import Entity.Client;
 import Entity.CreativeStaff;
@@ -55,7 +54,7 @@ public class AssignStaffToCampaign {
         	Printer.println(i + ".)" + Database.clientList.get(i-1).getCompanyName());
         }
         Printer.print("Your choice: ");
-        int choice = new Scanner(System.in).nextInt();
+        int choice = Printer.scanInt();
         Client selectedClient = Database.clientList.get(choice-1);
         /*
             Campaign list
@@ -69,7 +68,7 @@ public class AssignStaffToCampaign {
             Main.mainMenu();
         }
         Printer.print("Your choice: ");
-        int campaignNum = new Scanner(System.in).nextInt();
+        int campaignNum = Printer.scanInt();
         Campaign selectedCampaign = selectedClient.getCampaignList().get(campaignNum-1);
         /*
             Staff list
@@ -84,7 +83,7 @@ public class AssignStaffToCampaign {
         }
         
         Printer.print("Your choice: ");
-        int staffNum = new Scanner(System.in).nextInt();
+        int staffNum = Printer.scanInt();
         
         selectedCampaign.addCampaignStaffList(staffList.get(staffNum-1));
         System.out.printf("%s has been assaigned to the '%s' campaign%n", 

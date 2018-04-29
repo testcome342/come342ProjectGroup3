@@ -1,7 +1,6 @@
 package Control;
 
 import Entity.Campaign;
-import Entity.Client;
 import Printer.Printer;
 import Entity.Advert;
 

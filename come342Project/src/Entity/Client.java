@@ -22,6 +22,7 @@ public class Client {
 	private String companyEmail;
 	private String contactEmail;
 	private List<Campaign> companyCampaignList = new ArrayList<Campaign>();
+	static Scanner scanner = new Scanner(System.in);
 
 	public Client(String companyName, String companyAddress, String companyEmail, String contactName,
 			String contactEmail) {
@@ -35,28 +36,26 @@ public class Client {
 	//Yeni bir client eklemek için fonksiyon.
 	public static void addNewClient() {
 
-		Printer.showClientList();
+		//Printer.showClientList();
 
-		Printer.print("\nCompany Name: ");
-		String companyName = new Scanner(System.in).nextLine();
+		Printer.print("Company Name: ");
+		String companyName = scanner.nextLine();
 		Printer.print("Company Address: ");
-		String companyAddress = new Scanner(System.in).nextLine();
+		String companyAddress = scanner.nextLine();
 		Printer.print("Company Email: ");
-		String companyEmail = new Scanner(System.in).nextLine();
+		String companyEmail = scanner.nextLine();
 		Printer.print("Contact Name: ");
-		String contactName = new Scanner(System.in).nextLine();
+		String contactName = scanner.nextLine();
 		Printer.print("Contact Email: ");
-		String contactEmail = new Scanner(System.in).nextLine();
+		String contactEmail = scanner.nextLine();
 		Client createdClient = new Client(companyName, companyAddress, companyEmail, contactName, contactEmail);
 		
 		//Yeni oluþturacaðýmýz clientý database e eklemek için o client üzerinde çalýþtýðýmýza dair control kodu.
 		AddNewClient.getInstance().createNewClient(createdClient);
 		
-		System.out.printf("The client named '%s' has added the system.\n", companyName);
-		System.out.println("Please enter the compaign informations:");
+		System.out.printf("The client named '%s' has been added the system.\n", companyName);
+		System.out.println("\nPlease enter the campaign informations:");
 		addNewCampaign(createdClient);
-		
-
 	}
 
 	//Var olan clientlara kampanya eklemek için çalýþan fonksiyon.
@@ -70,16 +69,16 @@ public class Client {
         }
         
         Printer.print("Your choice: ");
-        int choice = new Scanner(System.in).nextInt();
+        int choice = Printer.scanInt();
         Client selectedClient = Database.clientList.get(choice-1);
         
         /*
             Campaign list
         */
-        System.out.printf("\nSelect a campaign for client named '%s'", Database.clientList.get(choice-1).getCompanyName());
-        Printer.print("\n");
+        System.out.printf("\nExisting campaigns list for client named '%s':\n", Database.clientList.get(choice-1).getCompanyName());
         Printer.printSymbol("-", 20);
         AddNewCampaign.getInstance().showClientCampaigns(selectedClient);
+        System.out.printf("\nAdd a new campaign for client named '%s':\n", Database.clientList.get(choice-1).getCompanyName());
         
         addNewCampaign(selectedClient);
         
@@ -87,16 +86,17 @@ public class Client {
 
 	//Yeni oluþturulan clienta kampanya eklemek için çalýþan fonksiyon.
 	public static void addNewCampaign(Client client) {
-		System.out.println("New campaign title: ");
-		String campaignTitle = new Scanner(System.in).nextLine();
-		System.out.println("New Campaign Start Date: ");
-		String campaignStartDate = new Scanner(System.in).nextLine();
-		System.out.println("New Campaign Finish Date: ");
-		String campaignFinishDate = new Scanner(System.in).nextLine();
-		System.out.println("New Estimated Cost: ");
-		Double estimatedCost = new Scanner(System.in).nextDouble();
-        
-		 
+		System.out.print("New campaign title: ");
+		String campaignTitle = Printer.scanString();
+		System.out.print("New Campaign Start Date: ");
+		String campaignStartDate = Printer.scanString();
+		System.out.print("New Campaign Finish Date: ");
+		String campaignFinishDate = Printer.scanString();
+		System.out.print("New Estimated Cost: ");
+		Double estimatedCost = Printer.scanDouble();
+		AddNewCampaign.getInstance().createNewCampaign(client,
+				new Campaign(campaignTitle, campaignStartDate, campaignFinishDate, estimatedCost));
+		System.out.printf("A new campaign titled '%s' has been added the system for the client named '%s'.\n\n", campaignTitle, client.getCompanyName());
 		Main.mainMenu();
 
 	}

@@ -5,9 +5,7 @@ package Entity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import Control.AddNewAdvert;
-import Control.AddNewCampaign;
 import Printer.Printer;
 import come342.Database;
 
@@ -43,7 +41,6 @@ public class Campaign {
 	      
 	    }
 	 
-	//Var olan clientlara kampanya eklemek için çalýþan fonksiyon.
 		public static void addNewAdvert() {
 	        Printer.println("\nSelect a campaign:");
 	        /*
@@ -54,16 +51,16 @@ public class Campaign {
 	        }
 	        
 	        Printer.print("Your choice: ");
-	        int choice = new Scanner(System.in).nextInt();
+	        int choice = Printer.scanInt();
 	        Campaign selectedCampaign = Database.campaignList.get(choice-1);
 	        
 	        /*
 	            Campaign list
 	        */
-	        System.out.printf("\nSelect a advert for campaign named '%s'", Database.campaignList.get(choice-1).getCampaignTitle());
-	        Printer.print("\n");
+	        System.out.printf("\nExisting advert(s) list for the campaign titled '%s':\n", Database.campaignList.get(choice-1).getCampaignTitle());
 	        Printer.printSymbol("-", 20);
 	        AddNewAdvert.getInstance().showCampaignAdvert(selectedCampaign);
+	        System.out.printf("\nAdd a new advert for campaign titled '%s':\n", Database.campaignList.get(choice-1).getCampaignTitle());
 	        
 	        Advert.createAdvert(selectedCampaign);
 	        
