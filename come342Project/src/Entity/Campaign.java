@@ -44,7 +44,7 @@ public class Campaign {
 		public static void addNewAdvert() {
 	        Printer.println("\nSelect a campaign:");
 	        /*
-	            Show client list
+	            Show campaign list
 	        */
 	        for (int i=1; i<=Database.campaignList.size(); i++){
 	            Printer.println(i + ".)" + Database.campaignList.get(i-1).getCampaignTitle());
@@ -55,7 +55,7 @@ public class Campaign {
 	        Campaign selectedCampaign = Database.campaignList.get(choice-1);
 	        
 	        /*
-	            Campaign list
+	            Advert list
 	        */
 	        System.out.printf("\nExisting advert(s) list for the campaign titled '%s':\n", Database.campaignList.get(choice-1).getCampaignTitle());
 	        Printer.printSymbol("-", 20);
