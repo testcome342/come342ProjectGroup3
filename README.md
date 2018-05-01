@@ -7,7 +7,8 @@
 **12-** Add a new member of staff  
 
 **Class Diagram:**
-https://go.gliffy.com/go/publish/12633906
+Full requirements - https://go.gliffy.com/go/publish/12633906  
+Req. No.2 - https://go.gliffy.com/go/share/s65dsc0ux5e55yxj0cmx
 
 Sequence Diagrams
 ---
