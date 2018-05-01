@@ -7,6 +7,7 @@ import java.util.List;
 import Entity.Campaign;
 import Entity.Client;
 import Entity.CreativeStaff;
+import Entity.MagazineAdvert;
 import Entity.Advert;
 
 
@@ -40,7 +41,7 @@ public class Database {
         creativeStaffList.add(new CreativeStaff("Ali Dinçer", 3, "27/06/2015"));     
         
         
-        Advert advert1 = new Advert("ABC","30/20/10",30.00,40.00);
+        Advert advert1 = new MagazineAdvert("Magazine", "ABC","30/20/10",30.00,40.00);
         tekno5.addNewCampaignAdvert(advert1);
     }
 }

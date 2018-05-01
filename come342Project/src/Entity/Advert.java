@@ -1,9 +1,6 @@
 package Entity;
 
-import Printer.Printer;
-import come342.Main;
-
-public class Advert {
+public abstract class Advert {
 	
 	private String advertTitle;
 	private String targetCompletionDate;
@@ -16,24 +13,6 @@ public class Advert {
 		this.targetCompletionDate = targetCompletionDate;
 		this.estimatedAdvertCost = estimatedAdvertCost;
 		this.actualAdvertCost = actualAdvertCost;
-	}
-	
-	
-	
-	public static void createAdvert(Campaign campaign) {
-		Printer.print("Advert Title: ");
-    	String advertTitle = Printer.scanString();
-    	Printer.print("Target Completion Date: ");
-    	String targetCompletionDate = Printer.scanString();
-    	Printer.print("Estimated Advert Cost: ");
-    	double estimatedCost = Printer.scanDouble();
-    	Printer.print("Actual Advert Cost: ");
-    	double actualAdvertCost = Printer.scanDouble();
-    	Advert createdAdvert = new Advert(advertTitle,targetCompletionDate,estimatedCost,actualAdvertCost);
-		
-    	
-    	Main.mainMenu();
-    	
 	}
 	
 	public String getAdvertTitle() {

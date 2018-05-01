@@ -8,6 +8,7 @@ import java.util.List;
 import Control.AddNewAdvert;
 import Printer.Printer;
 import come342.Database;
+import come342.Main;
 
 public class Campaign {
 	private String campaignTitle;
@@ -60,10 +61,29 @@ public class Campaign {
 	        System.out.printf("\nExisting advert(s) list for the campaign titled '%s':\n", Database.campaignList.get(choice-1).getCampaignTitle());
 	        Printer.printSymbol("-", 20);
 	        AddNewAdvert.getInstance().showCampaignAdvert(selectedCampaign);
-	        System.out.printf("\nAdd a new advert for campaign titled '%s':\n", Database.campaignList.get(choice-1).getCampaignTitle());
-	        
-	        Advert.createAdvert(selectedCampaign);
-	        
+	        //Selecting the advert type
+	        System.out.printf("\nWhat kind of advert would you like to add for campaign titled '%s'?\n", Database.campaignList.get(choice-1).getCampaignTitle());
+			Printer.println("1- Magazine Advert");
+			Printer.println("2- Newspaper Advert");
+			Printer.println("3- Poster Advert");
+			Printer.printSymbol("-", 20);
+			Printer.print("\nYour choice: ");
+			choice = Printer.scanInt();
+			
+			switch(choice) {
+			case 1:
+				MagazineAdvert.createAdvert(selectedCampaign);
+				break;
+			case 2:
+				NewspaperAdvert.createAdvert(selectedCampaign);
+				break;
+			case 3:
+				PosterAdvert.createAdvert(selectedCampaign);
+				break;
+			default:
+				Printer.println("Error. Please choose between 1 - 3");
+				Main.mainMenu();
+			}			        
 	    }
 	 
 	 public void addNewCampaignAdvert(Advert advert) {
