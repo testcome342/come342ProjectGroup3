@@ -9,3 +9,6 @@
 **Class Diagram:**
 https://go.gliffy.com/go/publish/12633906
 
+Sequence Diagrams
+---
+Req. No.5 - https://www.lucidchart.com/documents/view/1f7d76a8-18bc-4d0e-8730-cdc7637a8ad5
