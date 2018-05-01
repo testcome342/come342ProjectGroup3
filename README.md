@@ -20,3 +20,4 @@ Req. No.1 - https://www.lucidchart.com/documents/view/7888888d-0bb6-4df5-b998-fe
 Req. No.2 - https://www.lucidchart.com/documents/view/e4f3c5d7-4490-49e0-8333-1859a030d04e  
 Req. No.5 - https://www.lucidchart.com/documents/view/1f7d76a8-18bc-4d0e-8730-cdc7637a8ad5  
 Req. No.11 - https://www.lucidchart.com/documents/view/370c1e4c-a272-4c72-8d56-f8faaa021144  
+Req. No.12 - https://www.lucidchart.com/documents/view/6ea76b17-dceb-4d68-a3a0-cbdd34677ca8/0
